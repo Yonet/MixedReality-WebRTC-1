@@ -38,10 +38,9 @@ jobs:
       command: restore
       restoreSolution: '$(Build.SourcesDirectory)/libs/Microsoft.MixedReality.WebRTC.Native/src/${{parameters.buildPlatform}}/packages.config'
       restoreDirectory: '$(Build.SourcesDirectory)/packages'
-      includeNuGetOrg: false
+      includeNuGetOrg: true
       feedsToUse: config
-      nugetConfigPath: '$(Build.SourcesDirectory)/tools/nuget/NuGetInternal.config'
-      externalFeedCredentials: 'mr_internal_nuget_feed'
+      nugetConfigPath: '$(Build.SourcesDirectory)/tools/nuget/NuGetOrg.config'
     timeoutInMinutes: 30
 
   # Ensure that Python 2.7.16 is the default; the Google scripts don't work with Python 3.x
